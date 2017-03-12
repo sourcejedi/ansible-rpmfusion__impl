@@ -1,9 +1,9 @@
 galaxy_info:
   author: Alan Jenkins
   description:
-    This role is not to be invoked directly.
-    It provides both the code and documentation for
+    This role provides both the code and documentation for
     `sourcejedi.rpmfusion-free` and `sourcejedi.rpmfusion-nonfree`.
+    It is not to be invoked directly.
 
   license: GPLv3
 
@@ -14,7 +14,8 @@ galaxy_info:
     - name: Fedora
       versions: [24, 25, 26, 27]
 
-  galaxy_tags: []
+  galaxy_tags:
+    - repository
 
 # Allow multiple runs, to enable multiple "repo"s.
 allow_duplicates: yes
