@@ -1,11 +1,8 @@
-# Do not use this role directly.
-# See rpmfusion-free and rpmfusion-nonfree.
-#
 # rpmfusion-nonfree automatically pulls in rpmfusion-free,
 # complying with documentation at https://rpmfusion.org/Configuration
 #
 # You could have a single role with a variable to control whether the nonfree
-# repo is enabled.  However this would generate "a lot of ‘skipped’ output".
+# repo is enabled.  However that method generates "a lot of ‘skipped’ output".
 #
 # I think the skipped output is possible to avoid using a loop - of an include
 # task.  However "dynamic includes" seem to be quite magical beasts.  I
