@@ -65,7 +65,7 @@
   args:
     chdir: /ansible-managed/rpmfusion-{{ repo }}/
   changed_when: False
-  always_run: True
+  check_mode: False
 
 - name: Import signing key
   rpm_key:
@@ -90,7 +90,7 @@
     chdir: /ansible-managed/rpmfusion-{{ repo }}/
     warn: no  # can't use ansible dnf module, it does not implement this
   changed_when: False
-  always_run: True
+  check_mode: False
 
 - name: Install rpmfusion release RPM
   package:
