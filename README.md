@@ -3,6 +3,8 @@
 This role is not to be invoked directly.  It provides both the code and documentation for `sourcejedi.rpmfusion-free` and
 `sourcejedi.rpmfusion-nonfree`, as available on ansible galaxy.
 
+A uninstaller is available separately.  See `sourcejedi.rpmfusion_remove`.
+
 
 ## rpmfusion-free
 
