@@ -1,7 +1,6 @@
 # rpmfusion__impl #
 
-This role is not to be invoked directly.  It provides both the code and documentation for `sourcejedi.rpmfusion-free` and
-`sourcejedi.rpmfusion-nonfree`, as available on ansible galaxy.
+This role is not to be invoked directly.  It provides both the code and documentation for `sourcejedi.rpmfusion-free` and `sourcejedi.rpmfusion-nonfree`, as available on ansible galaxy.
 
 A uninstaller is available separately.  See `sourcejedi.rpmfusion-remove`.
 
@@ -13,8 +12,7 @@ Enable the [RPM Fusion](https://rpmfusion.org/) "free" software repository.
 
 ## rpmfusion-nonfree
 
-Enable the [RPM Fusion](https://rpmfusion.org/) "nonfree" software repository.
-This role enables the "free" repository at the same time, as it may be required by software in "nonfree".
+Enable the [RPM Fusion](https://rpmfusion.org/) "nonfree" software repository.  This role enables the "free" repository at the same time, as it may be required by software in "nonfree".
 
 
 ## Requirements
