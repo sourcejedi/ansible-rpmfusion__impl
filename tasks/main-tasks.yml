@@ -77,13 +77,7 @@
   rpm_key:
     key: /ansible-managed/rpmfusion/rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-{{ ansible_distribution_major_version }}
     state: present
-
-  # On F25, import succeeds but is considered failed due to noisy rpm bug.
-  # https://bugzilla.redhat.com/show_bug.cgi?id=1398272#c3
   register: import_key
-  until: not import_key|failed
-  retries: 1
-  delay: 0
 
 # sourcejedi.rpmfusion_remove relies on descriptions to remove keys, because
 # I don't know whether we're guaranteed to know all the installed RPM Fusion
