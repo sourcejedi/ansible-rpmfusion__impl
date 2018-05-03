@@ -28,6 +28,12 @@ Once installed, updates to the RPM Fusion keys will be delivered through the pac
 
 We'll also have to update the keys in the role, when new releases become available.  This is easy to keep up with for releases, because RPM Fusion provides keys two releases in advance (for branched/rawhide?).
 
+TODO:
+
+RPMFusion now has a HTTPS site, yay!
+And Fedora have their GPG key in the package distribution-gpg-keys.
+I suspect we want to switch to piggybacking off one of those, instead.
+
 
 ## License
 
