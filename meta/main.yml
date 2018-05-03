@@ -15,6 +15,7 @@ galaxy_info:
       versions:
        - 26
        - 27
+       - 28
 
   galaxy_tags:
     - repository
