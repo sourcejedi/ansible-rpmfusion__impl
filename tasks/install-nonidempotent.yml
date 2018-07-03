@@ -28,7 +28,7 @@
 # This role also includes fingerprints of the keys.
 #
 - name: Our key file matches our list of fingerprints
-  shell: VER={{ ansible_distribution_major_version | quote }};
+  shell: VER={{ ansible_distribution_major_version|int }};
          KEY=RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER";
          ./keyfile_to_fingerprints.sh rpm-gpg/"$KEY" |
          diff -u fingerprints/"$KEY" /dev/stdin

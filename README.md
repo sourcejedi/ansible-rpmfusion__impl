@@ -28,11 +28,10 @@ Once installed, updates to the RPM Fusion keys will be delivered through the pac
 
 We'll also have to update the keys in the role, when new releases become available.  This is easy to keep up with for releases, because RPM Fusion provides keys two releases in advance (for branched/rawhide?).
 
-TODO:
 
-RPMFusion now has a HTTPS site, yay!
-And Fedora have their GPG key in the package distribution-gpg-keys.
-I suspect we want to switch to piggybacking off one of those, instead.
+## Role Variables
+
+`rpmfusion__update_master_keys` is an internal hack.  It is not intended to be used.  When you need updated keys, you should just `git pull`.  (Or `ansible-galaxy install -f ...`, I guess?). This variable is what I use to update the master git repo :).  It updates the signing keys from the managed node(s).
 
 
 ## License

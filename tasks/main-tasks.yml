@@ -61,3 +61,7 @@
 - include: install-nonidempotent.yml
   static: yes
   when: install_idempotent|failed or install_idempotent|changed
+
+- include: update_master_keys.yml
+  static: no  # Don't even show as "skipped"
+  when: rpmfusion__update_master_keys
