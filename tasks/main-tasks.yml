@@ -63,5 +63,8 @@
   when: install_idempotent|failed or install_idempotent|changed
 
 - include: update_master_keys.yml
-  static: no  # Don't even show as "skipped"
+  # I tried "static: no", so these tasks would not show up even as "skipped".
+  # but then the include task shows up, *even when running a different tag*.
+  # (ansible-2.6.3-1.fc28.noarch).
+  static: yes
   when: rpmfusion__update_master_keys
