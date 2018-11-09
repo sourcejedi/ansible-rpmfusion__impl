@@ -25,8 +25,8 @@
 
 - name: Update fingerprint of master key N+1
   shell: VER={{ ansible_distribution_major_version|int + 1}};
-         ./keyfile_to_fingerprints
-         < rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
+         ./keyfile_to_fingerprints.sh
+         rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
          > fingerprints/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
   args:
     chdir: "{{ role_path }}/files"
