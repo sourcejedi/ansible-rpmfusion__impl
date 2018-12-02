@@ -12,7 +12,8 @@ Enable the [RPM Fusion](https://rpmfusion.org/) "free" software repository.
 
 ## rpmfusion-nonfree
 
-Enable the [RPM Fusion](https://rpmfusion.org/) "nonfree" software repository.  This role enables the "free" repository at the same time, as it may be required by software in "nonfree".
+Enable the [RPM Fusion](https://rpmfusion.org/) "nonfree" software repository.
+This role also enables the "free" repository, as it may be required by software in "nonfree".
 
 
 ## Requirements
