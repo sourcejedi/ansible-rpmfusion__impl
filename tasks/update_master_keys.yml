@@ -24,8 +24,9 @@
       PLEASE REVERT ALL CHANGED KEYS IMMEDIATELY.
 
 - name: Update fingerprint of master key N+1
-  shell: VER={{ ansible_distribution_major_version|int + 1 }};
-         ./keyfile_to_fingerprints.sh
+  shell: |
+    VER={{ ansible_distribution_major_version|int + 1 }} &&
+    ./keyfile_to_fingerprints.sh \
          rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
          > fingerprints/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
   args:
@@ -36,8 +37,9 @@
   failed_when: rpmfusion__fingerprint_1_update.rc != 0 or rpmfusion__fingerprint_1_update.stderr
 
 - name: Update fingerprint of master key N+2
-  shell: VER={{ ansible_distribution_major_version|int + 2 }};
-         ./keyfile_to_fingerprints.sh
+  shell: |
+    VER={{ ansible_distribution_major_version|int + 2 }} &&
+    ./keyfile_to_fingerprints.sh \
          rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
          > fingerprints/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
   args:
