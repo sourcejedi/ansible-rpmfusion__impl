@@ -60,7 +60,7 @@
 
 - include: install-nonidempotent.yml
   static: yes
-  when: install_idempotent|failed or install_idempotent|changed
+  when: install_idempotent.failed or install_idempotent.changed
 
 - include: update_master_keys.yml
   # I tried "static: no", so these tasks would not show up even as "skipped".
