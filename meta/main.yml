@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: rpmfusion__impl
   author: Alan Jenkins
   description:
     This role provides both the code and documentation for
