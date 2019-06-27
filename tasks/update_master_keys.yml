@@ -27,7 +27,7 @@
   shell: |
     VER={{ ansible_distribution_major_version|int + 1 }} &&
     ./keyfile_to_fingerprints.sh \
-         rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
+         rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER" \
          > fingerprints/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
   args:
     chdir: "{{ role_path }}/files"
@@ -40,7 +40,7 @@
   shell: |
     VER={{ ansible_distribution_major_version|int + 2 }} &&
     ./keyfile_to_fingerprints.sh \
-         rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
+         rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER" \
          > fingerprints/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER"
   args:
     chdir: "{{ role_path }}/files"
