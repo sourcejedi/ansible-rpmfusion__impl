@@ -5,13 +5,15 @@ galaxy_info:
     This role provides both the code and documentation for
     `sourcejedi.rpmfusion_free` and `sourcejedi.rpmfusion_nonfree`.
     It is not to be invoked directly.
+  galaxy_tags:
+    - repository
   license: GPLv3
-  # check_mode
-  min_ansible_version: 2.2
+
+  # rpmfusion__impl uses import_tasks / include_tasks
+  min_ansible_version: 2.4
+
   platforms:
     - name: Fedora
       versions:
-       - 28
        - 29
-  galaxy_tags:
-    - repository
+       - 30
