@@ -34,7 +34,7 @@
   delegate_to: 127.0.0.1
   when: rpmfusion__master_keys_updated.results[1].changed
   register: rpmfusion__fingerprint_1_update
-  failed_when: rpmfusion__fingerprint_1_update.rc != 0 or rpmfusion__fingerprint_2_update.stderr_lines|length > 1
+  failed_when: rpmfusion__fingerprint_1_update.rc != 0 or rpmfusion__fingerprint_1_update.stderr_lines|length > 1
 
 - name: Update fingerprint of master key N+2
   shell: |
