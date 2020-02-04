@@ -52,6 +52,6 @@
     VER={{ ansible_distribution_major_version|int }} &&
     FPRINT="$(cat /ansible-managed/rpmfusion/fingerprints/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-"$VER")" &&
     KEYID="$(echo "$FPRINT" | tr "A-F" "a-f" | tr -d ' \r\n' | tail --bytes 8 )" &&
-    rpm -qa gpg-pubkey --qf "%{version}-%{release} %{summary}\n" | grep "gpg[(]RPM Fusion {{ repo }}" | grep "$KEYID"
+    rpm -qa gpg-pubkey --qf "%{version}-%{release} %{summary}\n" | grep "RPM Fusion {{ repo }}.*\<.*\.rpmfusion\.org\>" | grep "$KEYID"
   check_mode: False
   changed_when: False
