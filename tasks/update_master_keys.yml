@@ -1,6 +1,8 @@
 # Ansible script to update the keys in this role from a managed node.
 # About as horrifying as it sounds.
 
+# Note fetch module does not support check mode.  That would be too easy.
+
 - name: Update master keys
   fetch:
     src: '/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-{{ ver }}'
@@ -14,8 +16,8 @@
     loop_var: ver
   register:
     rpmfusion__master_keys_updated
+  check_mode: no
 
-# fetch module does not support check mode.  That would be too easy.
 - name: Check for unexpected changes in current master key
   assert:
     that: not rpmfusion__master_keys_updated.results[0].changed
