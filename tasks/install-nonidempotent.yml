@@ -7,7 +7,6 @@
   command: rpm --checksig rpmfusion-{{ repo }}-release-{{ ansible_distribution_major_version }}.noarch.rpm
   args:
     chdir: /ansible-managed/rpmfusion/
-    warn: no  # can't use ansible dnf module, it does not implement this
   changed_when: False
   check_mode: False
 
@@ -29,8 +28,6 @@
   register: dnf_check_update
   # exit status is 0 on success, 100 if updates available (otherwise 100)
   failed_when: dnf_check_update.rc not in [0, 100]
-  args:
-    warn: no  # can't use ansible dnf module, it does not implement this
 
 # Repo may have an updated version.
 # See also comment in main-tasks.yml
