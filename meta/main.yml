@@ -15,5 +15,5 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-       - 35
-       - 36
+       - 39
+       - 40
