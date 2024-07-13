@@ -46,7 +46,7 @@
 #
 # The official instructions are purely a bootstrap towards installing
 # the rpmfusion release package. So I think we can use the obvious
-# workaround without losing anything (it might even improve performance).
+# workaround without losing anything.
 
 - name: rpmfusion release is already installed
   package:

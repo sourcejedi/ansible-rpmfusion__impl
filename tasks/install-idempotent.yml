@@ -4,10 +4,24 @@
 # It will be possible to update this role's copy of the keys accordingly.
 # Equally, if you already installed RPMFusion you could cross-check the keys.
 #
+
+- name: Create directories
+  file:
+    state: directory
+    path: "/ansible-managed/rpmfusion/{{ item }}"
+    mode: "755"
+  with_items:
+    - rpm-gpg
+    - fingerprints
+
+- name: Set filename for signing key
+  set_fact:
+    rpmfusion_key: "RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-{{ ansible_distribution_major_version }}"
+
 - name: Copy signing keys
   copy:
-    src: "{{ item }}"
-    dest: /ansible-managed/rpmfusion/
+    src: "{{ item }}/{{ rpmfusion_key }}"
+    dest: "/ansible-managed/rpmfusion/{{ item }}/{{ rpmfusion_key }}"
   with_items:
     - rpm-gpg
     - fingerprints
@@ -40,10 +54,12 @@
 
 - name: Import signing key
   rpm_key:
-    key: /ansible-managed/rpmfusion/rpm-gpg/RPM-GPG-KEY-rpmfusion-{{ repo }}-fedora-{{ ansible_distribution_major_version }}
+    key: "/ansible-managed/rpmfusion/rpm-gpg/{{ rpmfusion_key }}"
     state: present
   register: import_key
 
+# FIXME check mode above/below
+  
 # sourcejedi.rpmfusion_remove relies on descriptions to remove keys, because
 # I don't know whether we're guaranteed to know all the installed RPM Fusion
 # key IDs.  Check that this works for the key we just installed.
